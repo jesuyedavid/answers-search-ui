@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact/merge@v4
         with:
           name: build-output-US
-          pattern: build-output-*-US
+          pattern: build-output-US-*
           merge-multiple: true
 
   merge_multiple_eu_artifacts:
@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact/merge@v4
         with:
           name: build-output-EU
-          pattern: build-output-*-EU
+          pattern: build-output-EU-*
           merge-multiple: true
 
   call_unit_test:
