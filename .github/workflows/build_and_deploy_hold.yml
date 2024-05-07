@@ -49,7 +49,9 @@ jobs:
 
   call_acceptance:
     uses: ./.github/workflows/acceptance.yml
-    needs: call_build
+    needs: 
+      - merge_multiple_us_artifacts
+      - merge_multiple_eu_artifacts
 
   call_extract_versions:
     uses: ./.github/workflows/extract_versions.yml
