@@ -62,7 +62,7 @@ export default class EventEmitter {
   /**
    * emit is the public interface for broadcasting messages/events
    * @param {string} evt the event name to publish from
-   * @param {Object} data the data to send along to the subscribers
+   * @param {Object} data the data to send along to the subscribers.
    */
   emit (evt, data) {
     const listeners = this._listeners[evt];
