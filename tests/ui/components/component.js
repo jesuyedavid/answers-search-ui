@@ -13,7 +13,7 @@ import Storage from '../../../src/core/storage/storage';
 const DEFAULT_TEMPLATE = '<div>This is a default template {{name}}</div>';
 
 // Our render requires the native handlebars compiler,
-// and the set of precompiled templates for the components to use
+// and the set of precompiled templates for the components to use.
 const RENDERER = new HandlebarsRenderer({
   _hb: Handlebars,
   default: Handlebars.compile(DEFAULT_TEMPLATE)

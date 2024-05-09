@@ -16,7 +16,7 @@ export default class Facet {
   }
 
   /**
-   * Create a facet filter from a list of Filters
+   * Create a facet filter from a list of Filters.
    * @param {Array<string>} availableFieldIds array of expected field ids
    * @param  {...Filter} filters The filters to use in this facet
    * @returns {Facet}
