@@ -25,6 +25,8 @@ jobs:
 
   merge_multiple_us_artifacts:
     uses: ./.github/workflows/merge_upload_multiple_artifacts.yml
+    needs:
+      - call_build_locales
     with:
       cloud_region: US
 
