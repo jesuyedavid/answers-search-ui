@@ -55,3 +55,8 @@ jobs:
       with:
         name: build-output-${{ inputs.cloud_region }}-${{ matrix.language }}
         path: dist/
+    - name: Merge into build-output-${{ inputs.cloud_region }} Artifact
+      uses: actions/upload-artifact/merge@v4
+      with:
+        name: build-output-${{ inputs.cloud_region }}
+        pattern: build-output-${{ inputs.cloud_region }}-*
