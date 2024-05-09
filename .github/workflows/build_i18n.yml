@@ -57,6 +57,7 @@ jobs:
         path: dist/
 
   merge_multiple_artifacts:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Merge into build-output-US Artifact
