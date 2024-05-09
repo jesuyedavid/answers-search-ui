@@ -18,12 +18,24 @@ jobs:
       build_script: build-search-bar-only
       cloud_region: EU
 
-  call_misc_tests:
-    uses: ./.github/workflows/miscellaneous_tests.yml
+  merge_multiple_us_artifacts:
+    uses: ./.github/workflows/merge_upload_multiple_artifacts.yml
+    with:
+      cloud_region: US
+
+  merge_multiple_eu_artifacts:
+    uses: ./.github/workflows/merge_upload_multiple_artifacts.yml
+    with:
+      cloud_region: EU
 
   call_acceptance_search_bar:
     uses: ./.github/workflows/acceptance_search_bar.yml
-    needs: call_build
+    needs: 
+      - merge_multiple_us_artifacts
+      - merge_multiple_eu_artifacts
+      
+  call_misc_tests:
+    uses: ./.github/workflows/miscellaneous_tests.yml
 
   call_extract_versions:
     uses: ./.github/workflows/extract_versions.yml
